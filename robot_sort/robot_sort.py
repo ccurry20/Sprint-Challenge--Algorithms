@@ -96,8 +96,18 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        new_list = []
+
+        while self._list:  #stop looping when empty
+            minimum = self._list[0]  
+            for n in self._list:  #loop thru robot list
+                if n < minimum:
+                    minimum = n  #if less than min, min equals n
+            new_list.append(minimum)  #add to new list
+            self._list.remove(minimum)  #remove from old list  
+
+        print(new_list)
+     
 
 
 if __name__ == "__main__":
